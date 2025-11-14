@@ -1,0 +1,33 @@
+---
+// Eliminamos todas las importaciones de iconos
+// import SunIcon from "./icons/Sun.astro"
+// import MoonIcon from "./icons/Moon.astro"
+// import SystemIcon from "./icons/System.astro"
+
+// Eliminamos la constante THEMES
+// const THEMES = ["Light", "Dark", "System"]
+---
+
+<script is:inline>
+  // Esta función garantiza que la clase 'dark' se añada al elemento <html>
+  // de forma permanente, forzando el modo oscuro.
+  const forceDarkTheme = () => {
+    // 1. Añadir la clase 'dark' al elemento <html>
+    document.documentElement.classList.add("dark");
+    
+    // 2. Limpiar cualquier preferencia de tema guardada en el navegador
+    if (typeof localStorage !== "undefined") {
+      localStorage.removeItem("theme");
+    }
+  }
+
+  // Ejecutar la función al cargar la página
+  forceDarkTheme();
+
+  // Asegurarse de que se mantenga oscuro incluso después de las transiciones de Astro
+  document.addEventListener('astro:after-swap', forceDarkTheme);
+</script>
+
+<style>
+/* Eliminamos todos los estilos */
+</style>
