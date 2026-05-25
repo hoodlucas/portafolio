@@ -9,6 +9,8 @@ import Flask from "./icons/Flask.astro"
 import Bootstrap from "./icons/Bootstrap.astro"
 import Python from "./icons/Python.astro"
 import Javascript from "./icons/Javascript.astro"
+import ReactNative from "./icons/ReactNative.astro"
+import TypeScript from "./icons/TypeScript.astro"
 
 const TAGS = {
   NEXT: {
@@ -46,9 +48,36 @@ const TAGS = {
     class: "bg-[#092E20] text-white",
     icon: Javascript,
   },
+  REACT_NATIVE: {
+    name: "React Native",
+    class: "bg-[#003159] text-white",
+    icon: ReactNative,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: TypeScript,
+  },
 }
 const PROJECTS = [
-
+    {
+    title: "Checkealo - Escáner Nutricional",
+    description:
+      "Aplicación móvil que permite al usuario en el supermercado escanear códigos de barras con la cámara. Implementa un servicio que consume la API de Open Food Facts para traer los datos del producto, compararlos con la condición del usuario y entregar una devolución nutricional personalizada al instante.",
+    link: "", 
+    github: "https://github.com/hoodlucas/Checkealo",
+    image: "/projects/chequealo.jpg",
+    tags: [TAGS.REACT_NATIVE, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Pozos Ya",
+    description:
+      "Aplicación web de gestión de reclamos de baches que facilita el reporte ciudadano geolocalizado y provee al Municipio herramientas de administración, priorización y análisis mediante mapas y gráficos.",
+    link: "", 
+    github: "https://github.com/hoodlucas/pozos-ya", 
+    image: "/projects/pozos-ya.jpg",
+    tags: [TAGS.PYTHON, TAGS.DJANGO],
+  },
   {
   title: "Sistema de Gestión de Cursos",
   description:
@@ -63,7 +92,7 @@ const PROJECTS = [
     description:
       "Simulación de un e-commerce con productos típicos argentinos. Proyecto final inspirado en el comercio local.",
     link: "", // si lo subís a producción, lo agregamos
-    github: "https://github.com/hoodlucas/language_institute",
+    github: "https://github.com/hoodlucas/MadeInArgentina",
     image: "/projects/made-in-arg.jpg",
     tags: [TAGS.PYTHON, TAGS.FLASK, TAGS.BOOTSTRAP],
   }
